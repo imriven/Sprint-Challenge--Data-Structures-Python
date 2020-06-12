@@ -13,4 +13,4 @@ class RingBuffer:
 
 
     def get(self):
-        pass
+        return [item for item in self.storage if item is not None]
