@@ -99,6 +99,7 @@ for name in names_2:
 
 end_time = time.time()
 print(f"{len(duplicates)} duplicates:\n\n{', '.join(duplicates)}\n\n")
+print("Using a dictionary:")
 print(f"runtime: {end_time - start_time} seconds")
 
 
