@@ -1,5 +1,41 @@
 import time
 
+
+class BSTNode:
+    def __init__(self, value):
+        self.value = value
+        self.left = None
+        self.right = None
+
+    # Insert the given value into the tree
+    def insert(self, value):
+
+        if self.value == value:
+            return
+        if value < self.value:
+            if self.left:
+                self.left.insert(value)
+            else:
+                self.left = BSTNode(value)
+        if value > self.value:
+            if self.right:
+                self.right.insert(value)
+            else:
+                self.right = BSTNode(value)
+
+    # Return True if the tree contains the value
+    # False if it does not
+
+    def contains(self, target):
+        if self.value == target:
+            return True
+        if target < self.value and self.left:
+            return self.left.contains(target)
+        if target > self.value and self.right:
+            return self.right.contains(target)
+        return False
+
+
 start_time = time.time()
 
 f = open('names_1.txt', 'r')
